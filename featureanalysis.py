@@ -7,9 +7,9 @@ def getPlaylistAudioAttributes(developerToken,playlistID):
   sp = spotipy.Spotify(auth = developerToken) 
 
   songs = sp.playlist_tracks(playlistID)
-  IDlist = []
+  songIDList = []
   for song in songs["items"]:
-    IDList.append(song["track"]["id"])
+    songIDList.append(song["track"]["id"])
   print(songIDList)
   playlistFeatures = sp.audio_features(songIDList)
   
